@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<!--
+    Copyright (C) 2016  Janar Juusu
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html>
+<head>
+    <title>Filesystem simulator</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="author" content="Janar Juusu">
+    <meta name="keywords" content="filesystem,allocation">
+    <meta name="description" content="Filesystem simulator">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="filesystem.js"></script>
+</head>
+
+<body>
+
+    <div id="header"><h2>Filesystem simulator</h2></div>
+    <div id="language"><h3><a href="filesystem_est.html">EST</a> <a href="filesystem_eng.html">ENG</a></h3></div>
+    <div id="description"><p>   This graph shows single-level indexed placement of a filesystem on a graph.<br>
+                                You may choose one of the given file creation/removal array or enter your own.<br>
+                                Each event consists of a filename and it's size (in blocks) or - (minus) if file is to be removed.<br>
+                                Each filename is unique single character. Operations are separated by a semicolon (;).<br>
+                                You may create up to 10 files. Disk is limited to 50 blocks.</p>
+    </div>
+
+    <div id="collect">
+        <form id="form">
+            <input type="radio" name="choice" value="default1" checked>A,2;B,3;A,-;C,4;D,5;B,-;E,15<br>
+            <input type="radio" name="choice" value="default2">A,4;B,3;C,6;D,5;B,-;E,5;A,-;F,10<br>
+            <input type="radio" name="choice" value="default3">A,2;B,3;C,4;D,5;B,-;E,7;D,-;F,10;A,-;G,1;H,1;G,-;I,10;J,8;I,-<br>
+            <input type="radio" name="choice" value="own"><input type="text" name="custom"><br>
+            <input type="button" id="button" value="Draw" onclick="drawTable()">
+        </form>
+    </div>
+
+    <div id="table"></div>
+    <div id="frag">
+        <div id="fragFiles"></div>% of remaining files are fragmented (consisting of more than 1 fragment).<br>
+        <div id="fragSpace"></div>% of used space are allocated to fragmented files.
+    </div>
+    <div id="credits"><br><address>&copy; Janar Juusu, 2016. Made with <a href="https://developers.google.com/chart/">Google Charts</a>.</address></div>
+
+</body>
+</html>

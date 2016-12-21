@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<!--
+    Copyright (C) 2016  Janar Juusu
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<html>
+<head>
+    <title>Failisüsteemi visualiseerija</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="author" content="Janar Juusu">
+    <meta name="keywords" content="filesystem,allocation">
+    <meta name="description" content="Filesystem simulator">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="filesystem.js"></script>
+</head>
+
+<body>
+
+    <div id="header"><h2>Failisüsteemi ühetasemelise indekseeritud paigutuse simulaator</h2></div>
+    <div id="language"><h3><a href="filesystem_est.html">EST</a> <a href="filesystem_eng.html">ENG</a></h3></div>
+    <div id="description"><p>   See graafik simuleerib andmeblokkide paigutust failisüsteemis.<br>
+                                Võid valida ühe väljatoodud mustri või sisestada enda oma.<br>
+                                Iga sündmus koosneb failinimest ja faili suurusest (blokkide arv) või miinus kustutamiseks.<br>
+                                Iga loodav fail on unikaalse ühetähelise nimega. Sündmused on eraldatud semikooloniga (;).<br>
+                                Ketta suurus on 50 blokki.</p>
+    </div>
+
+    <div id="collect">
+        <form id="form">
+            <input type="radio" name="choice" value="default1" checked>A,2;B,3;A,-;C,4;D,5;B,-;E,15<br>
+            <input type="radio" name="choice" value="default2">A,4;B,3;C,6;D,5;B,-;E,5;A,-;F,10<br>
+            <input type="radio" name="choice" value="default3">A,2;B,3;C,4;D,5;B,-;E,7;D,-;F,10;A,-;G,1;H,1;G,-;I,10;J,8;I,-<br>
+            <input type="radio" name="choice" value="own"><input type="text" name="custom"><br>
+            <input type="button" id="button" value="Joonista" onclick="drawTable()">
+        </form>
+    </div>
+
+    <div id="table"></div>
+    <div id="frag">
+        <div id="fragFiles"></div>% failidest on fragmenteeritud (rohkem kui 1 fragment).<br>
+        <div id="fragSpace"></div>% kasutatud ruumist kuulub fragmenteeritud failidele.
+    </div>
+    <div id="credits"><br><address>&copy; Janar Juusu, 2016. Graafikuid loob <a href="https://developers.google.com/chart/">Google Charts</a>.</address></div>
+
+</body>
+</html>
