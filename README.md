@@ -4,11 +4,13 @@ This simulator graphically describes filesystem fragmentation.
 Files are separated by a semicolon (;). Each file has unique single-character name and a size or minus, if the file is to be deleted, separated by comma (,).
 This was created for a school project and is made using HTML, JavaScript and a little bit of CSS.
 
+This is available in English and Estonian.
+
 <!-- (You can see this live [here.](https://juusujanar.eu/filesystem)) -->
 
 ## Installation
 
-1. Download the html file
+1. Clone the repository
 2.1 Deploy to a web server.
 2.2 Open it directly in a browser.
 
