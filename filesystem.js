@@ -1,9 +1,6 @@
 /*
- *   Filesystem graph visualizing algorithm
- *   Using Google Charts for graphing
- */
+    Filesystem graph visualizing algorithm with Google Charts for graphing
 
- /*
     Copyright (C) 2016  Janar Juusu
 
     This program is free software: you can redistribute it and/or modify
