@@ -11,7 +11,7 @@ This is available in English and Estonian.
 ## Installation
 
 1. Clone the repository
-2 Deploy to a web server or open it directly in a browser.
+2. Deploy to a web server or open it directly in a browser.
 
 ## Usage
 
